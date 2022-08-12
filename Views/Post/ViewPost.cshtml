@@ -1,0 +1,14 @@
+@model Post
+
+<h1>@Model.Topic</h1>
+<h3>@Model.Body</h3>
+<img src="@Model.ImageUrl" alt="related to post." class="card-img-bottom" />
+<a href="/posts/@Model.PostId/edit">Edit this post</a>
+<form 
+    asp-controller="Post"
+    asp-action="Delete"
+    asp-route-deletedPostId="@Model.PostId"
+    method="POST"
+    >
+    <button>Delete</button>
+</form>
